@@ -1,14 +1,15 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { useGlobalContext } from "./context/Context";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [count, setCount] = useState(0);
+  const { greeting } = useGlobalContext();
+  console.log(greeting)
 
   return (
     <main>
-      <div className="loading" style={{ marginTop: "6rem" }}></div>
+      <Navbar />
     </main>
   );
 }
