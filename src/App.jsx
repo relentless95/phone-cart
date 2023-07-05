@@ -5,8 +5,6 @@ import CartContainer from "./components/CartContainer";
 
 function App() {
   const [count, setCount] = useState(0);
-  const { greeting } = useGlobalContext();
-  console.log(greeting);
 
   return (
     <main>
