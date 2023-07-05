@@ -1,5 +1,5 @@
 export const getTotals = (cart) => {
-  console.log("cart--->", cart);
+  // console.log("cart--->", cart);
   let totalAmount = 0;
   let totalCost = 0;
 
