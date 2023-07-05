@@ -10,6 +10,7 @@ import {
   LOADING,
   DISPLAY_ITEMS,
 } from "../actions/actions";
+import reducer from "../reducers/reducers";
 
 const AppContext = createContext();
 const initialState = {
@@ -18,11 +19,31 @@ const initialState = {
 };
 
 export const AppProvider = ({ children }) => {
-  const greeting = "hello";
-  // const []
+  // const greeting = "hello";
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const clearCart = () => {
+    dispatch({ type: CLEAR_CART });
+  };
+
+  const remove = (id) => {
+    dispatch({ type: REMOVE, payload: { id } });
+  };
+
+  const increase = (id) => {
+    dispatch({ type: INCREASE, payload: { id } });
+  };
+
+  const decrease = (id) => {
+    dispatch({ type: DECREASE, payload: { id } });
+  };
 
   return (
-    <AppContext.Provider value={{ greeting }}>{children}</AppContext.Provider>
+    <AppContext.Provider
+      value={{ ...state, clearCart, remove, increase, decrease }}
+    >
+      {children}
+    </AppContext.Provider>
   );
 };
 
