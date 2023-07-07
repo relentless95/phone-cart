@@ -6,7 +6,7 @@ import { useGlobalContext } from "../context/Context";
 const CartContainer = () => {
   const { cart, clearCart, totalCost } = useGlobalContext();
   // console.log("cart entries---->", Array.from(cart.entries()));
-  console.log("total cost", totalCost);
+  // console.log("total cost", totalCost);
   const cartArray = Array.from(cart.entries());
 
   if (cartArray.length === 0) {
